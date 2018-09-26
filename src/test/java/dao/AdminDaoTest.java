@@ -24,7 +24,7 @@ public class AdminDaoTest extends SpringJunitTest{
         * */
         @Test
         public  void deltelTest(){
-                System.out.println(adminDao.delete(2));
+                System.out.println(adminDao.delete(3));
         }
          /*
         * 根据id查找用户信息
@@ -44,7 +44,7 @@ public class AdminDaoTest extends SpringJunitTest{
          @Test
         public void addTest(){
                 Admin admin=new Admin();
-                admin.setUsername("li1");
+                admin.setUsername("li2");
                 admin.setName("hao1");
                 admin.setPassword("123");
                 adminDao.add(admin);

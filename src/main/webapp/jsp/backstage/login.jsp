@@ -13,12 +13,33 @@
 <html>
 <head>
     <title>hello</title>
+    <script language="JavaScript" src="<%=basePath%>jquery.js"></script>
+    <script>
+        $(function() {
+            $("#abc").click(function() {
+                //使用ajax执行登录操作
+                //第一个参数指要访问的服务端地址；
+                //第二个参数，指要传递的表单的数据，$("#myForm").serialize()
+                //第三个参数，function(data)用于接收服务端返回来的值，data
+                $.post("<%=basePath%>backstage/login",
+                    $("#myform").serialize(),
+                    function(data) {
+                        //根据服务端返回来的值，判断登录是否成功
+                        if(data.status==1){
+                            alert("登录成功")
+                        }else{
+                            alert("登录失败");
+                        }
+                    });
+            });
+        });
+    </script>
 </head>
 <body>
-<form action="<%=basePath%>backstage/login" method="post">
+<form id="myform" method="post">
     账户名：<input name="username">
     密码：<input name="password">
-    <input type="submit" value="登录">
+    <input id="abc" type="button" value="登录">
 </form>
 </body>
 </html>
