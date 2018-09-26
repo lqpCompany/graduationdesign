@@ -14,18 +14,21 @@ public interface AdminDao {
     Admin login(@Param(value = "username") String username, @Param(value = "password") String password);
 
     /*
-    * 根据id删除用户信息
-    * */
+     根据账户的标志符删除对应的账户信息
+     @param id 账户信息的id
+     @return 删除的记录数
+      */
     int delete(int id);
 
     /*
     * 根据id读取用户信息
-    *
+    *@param id账户信息的id
     * */
     Admin get(int id);
      /*
     * 根据Admin读取用户信息
-    *
+    *@param admin 账户信息，注意表中的非空字段不能为空
+	@return 添加了几条记录信息
     * */
      int add(Admin admin);
 }

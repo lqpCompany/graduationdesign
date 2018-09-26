@@ -11,7 +11,9 @@ import javax.annotation.Resource;
 public class AdminService {
     @Resource
     private AdminDao adminDao;
-
+    /*根据用户名和密码登录
+    * @return admin不等于空，表示为登录成功
+    * */
     public boolean login(String username,String password){
         Admin admin=adminDao.login(username, password);
         if(admin!=null){
