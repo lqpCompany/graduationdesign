@@ -12,4 +12,20 @@ public interface AdminDao {
  * @return null表示登录失败
  */
     Admin login(@Param(value = "username") String username, @Param(value = "password") String password);
+
+    /*
+    * 根据id删除用户信息
+    * */
+    int delete(int id);
+
+    /*
+    * 根据id读取用户信息
+    *
+    * */
+    Admin get(int id);
+     /*
+    * 根据Admin读取用户信息
+    *
+    * */
+     int add(Admin admin);
 }
