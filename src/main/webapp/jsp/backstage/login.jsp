@@ -13,7 +13,9 @@
 <html>
 <head>
     <title>hello</title>
+    <%--引入juqery文件--%>
     <script language="JavaScript" src="<%=basePath%>jquery.js"></script>
+    <%--使用juqery实现ajax登录--%>
     <script>
         $(function() {
             $("#abc").click(function() {

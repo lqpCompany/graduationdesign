@@ -2,7 +2,9 @@ package com.liuer.graduationdesign.web.backstage;
 
 
 
+import com.liuer.graduationdesign.model.Admin;
 import com.liuer.graduationdesign.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,23 +17,36 @@ import java.util.Map;
 @RequestMapping(value = "/backstage")
 public class LoginController {
 
-	@Resource
+	@Autowired
 	private AdminService adminService;
 
 
 	/*
 	 * 跳转到登录页面
+	 * @ResponseBody表示用ajax方法
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/login")
 	public Map<String,Integer> login(String username, String password){
+		//创建一个map集合
 		Map<String,Integer> map=new HashMap<>();
 		if(adminService.login(username, password)){
+			//如果返回的数据为1，则表示成功
 		map.put("status",1);
 		}else{
-			map.put("status",-1);
+			//如果返回的数据为-1，则表示失败
+		map.put("status",-1);
 		}
 		return map;
+	}
+	/*用户注册*/
+	@RequestMapping(value = "/add")
+	public String add(Admin admin){
+		if (adminService.add(admin)){
+			return "backstage/loginsuccess.jsp";
+		}else {
+			return "backstage/loginerror.jsp";
+		}
 	}
 
 }

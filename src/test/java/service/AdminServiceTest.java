@@ -14,7 +14,7 @@ public class AdminServiceTest extends SpringJunitTest{
     /*
     * 如果输出结果为ture表示数据库存在该用户，false则为不存在该用户
     * */
-    @Test
+/*    @Test
     public void loginTest(){
         System.out.println(adminService.login("user","123456"));
         System.out.println(adminService.login("username","123456"));
@@ -22,7 +22,7 @@ public class AdminServiceTest extends SpringJunitTest{
     @Test
     public  void deltelTest(){
         adminService.delete(2);
-    }
+    }*/
     @Test
     public void addTest(){
         Admin admin=new Admin();
