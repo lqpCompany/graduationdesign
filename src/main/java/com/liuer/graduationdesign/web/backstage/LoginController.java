@@ -32,21 +32,26 @@ public class LoginController {
 		Map<String,Integer> map=new HashMap<>();
 		if(adminService.login(username, password)){
 			//如果返回的数据为1，则表示成功
-		map.put("status",1);
+			map.put("status",1);
 		}else{
 			//如果返回的数据为-1，则表示失败
-		map.put("status",-1);
+			map.put("status",-1);
 		}
 		return map;
 	}
 	/*用户注册*/
+	@ResponseBody
 	@RequestMapping(value = "/add")
-	public String add(Admin admin){
+	public Map<String,Integer> add(Admin admin){
+		Map<String,Integer> map =new HashMap<>();
 		if (adminService.add(admin)){
-			return "backstage/loginsuccess.jsp";
+			//如果返回的数据为1，则表示成功
+			map.put("status",1);
 		}else {
-			return "backstage/loginerror.jsp";
+			//如果返回的数据为-1，则表示失败
+			map.put("status",-1);
 		}
+		return map;
 	}
 
 }
