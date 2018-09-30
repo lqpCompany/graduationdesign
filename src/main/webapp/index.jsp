@@ -11,5 +11,6 @@
 <a href="hello">点我就和你说hello</a><br/>
 <a href="<%=basePath%>jsp/backstage/login.jsp">登录页面</a>
 <a href="<%=basePath%>jsp/backstage/singup.jsp">注册页面</a>
+<a href="<%=basePath%>jsp/backstage/wjq.jsp">哥的登录页面</a>
 </body>
 </html>
