@@ -1,7 +1,7 @@
 package dao;
 
-import com.liuer.graduationdesign.dao.AdminDao;
-import com.liuer.graduationdesign.model.Admin;
+import com.liuer.graduationdesign.dao.CustomerDao;
+import com.liuer.graduationdesign.model.Customer;
 import com.liuer.graduationdesign.test.SpringJunitTest;
 import org.junit.Test;
 
@@ -10,12 +10,12 @@ import javax.annotation.Resource;
 /**
  * Created by Administrator on 2018/9/25.
  */
-public class AdminDaoTest extends SpringJunitTest{
+public class CustomerDaoTest extends SpringJunitTest{
         @Resource
-        private AdminDao adminDao;
+        private CustomerDao customerDao;
         @Test
         public void loginTest(){
-                Admin admin=adminDao.login("user","123456");
+                Customer admin= customerDao.login("user","123456");
                 System.out.println(admin.getName());
         }
         /*
@@ -24,7 +24,7 @@ public class AdminDaoTest extends SpringJunitTest{
         * */
         @Test
         public  void deltelTest(){
-                System.out.println(adminDao.delete(3));
+                System.out.println(customerDao.delete(3));
         }
          /*
         * 根据id查找用户信息
@@ -32,9 +32,9 @@ public class AdminDaoTest extends SpringJunitTest{
         * */
          @Test
         public void getTese(){
-                 Admin admin=adminDao.get(3);//数据库不存在返回null
+                 Customer admin= customerDao.get(3);//数据库不存在返回null
                  System.out.println(admin);
-                 admin=adminDao.get(1);//数据库存在返回该用户信息
+                 admin= customerDao.get(1);//数据库存在返回该用户信息
                  System.out.println(admin);
          }
          /*
@@ -43,11 +43,11 @@ public class AdminDaoTest extends SpringJunitTest{
         * */
          @Test
         public void addTest(){
-                Admin admin=new Admin();
+                Customer admin=new Customer();
                 admin.setUsername("li2");
                 admin.setName("hao1");
                 admin.setPassword("123");
-                adminDao.add(admin);
+                customerDao.add(admin);
                 System.out.println(admin);
         }
 }

@@ -6,12 +6,12 @@
 	<!-- 实体类,简称 -设置别名 -->
 	<typeAliases>
 		<!-- 将com.lcvc.ebuytest3.model.Admin类重新起一个名字Admin，供mybatis的映射文件使用 -->
-		<typeAlias alias="Admin" type="com.liuer.graduationdesign.model.Admin"/>
+		<typeAlias alias="Customer" type="com.liuer.graduationdesign.model.Customer"/>
 	</typeAliases>
 
 	<mappers>
 		<!--注册adminMappe.xml文件 -->
-	    <mapper resource="com/liuer/graduationdesign/dao/mapper/adminMapper.xml"/>
+	    <mapper resource="com/liuer/graduationdesign/dao/mapper/customerMapper.xml"/>
 	</mappers>
 
 

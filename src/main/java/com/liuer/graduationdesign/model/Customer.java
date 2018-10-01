@@ -1,6 +1,6 @@
 package com.liuer.graduationdesign.model;
 
-public class Admin {
+public class Customer {
     private Integer id;
     private String name;
     private String username;

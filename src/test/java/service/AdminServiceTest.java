@@ -1,8 +1,8 @@
 package service;
 
 
-import com.liuer.graduationdesign.model.Admin;
-import com.liuer.graduationdesign.service.AdminService;
+import com.liuer.graduationdesign.model.Customer;
+import com.liuer.graduationdesign.service.CustomerService;
 import com.liuer.graduationdesign.test.SpringJunitTest;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 
 public class AdminServiceTest extends SpringJunitTest{
     @Resource
-    private AdminService adminService;
+    private CustomerService adminService;
     /*
     * 如果输出结果为ture表示数据库存在该用户，false则为不存在该用户
     * */
@@ -25,7 +25,7 @@ public class AdminServiceTest extends SpringJunitTest{
     }*/
     @Test
     public void addTest(){
-        Admin admin=new Admin();
+        Customer admin=new Customer();
         admin.setName("li2");
         admin.setPassword("133");
         admin.setUsername("li1");
