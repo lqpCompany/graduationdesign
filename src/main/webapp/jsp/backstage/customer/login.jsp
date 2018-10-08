@@ -15,6 +15,33 @@
     <title>用户登录</title>
     <link href="css/index.css" rel="stylesheet" type="text/css" />
     <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <script type="application/javascript" src="css/jquery.js"></script>
+    <script>
+        $(function() {
+            //当单击登录按钮时
+            $("#log").click(function() {
+                //使用ajax执行登录操作
+                //第一个参数指要访问的服务端地址；
+                //第二个参数，指要传递的表单的数据，$("#myForm").serialize()
+                //第三个参数，function(data)用于接收服务端返回来的值，data
+                $.post("<%=basePath%>backstage/login",//表示要跳转到的页面
+                    $("#myform").serialize(),//初始化表单
+                    function(data) {
+                        //根据服务端返回来的值，判断登录是否成功
+                        //获取的json数据是由Controller里面的map集合传过来
+                        if(data.status==1){
+                            //跳转的页面
+                            alert("登录成功1");
+                            $(location).attr('href', '<%=basePath%>index.jsp');
+
+                        }else{
+                            alert("登录失败1");
+                            $(location).attr('href', 'loginerror.jsp');
+                        }
+                    });
+            });
+        });
+    </script>
 </head>
 <body>
 <iframe src="top.jsp" width="100%" height="30px" frameborder="0"></iframe>
@@ -24,13 +51,13 @@
 </div>
 <div class="part2">
     <div class="part2-con">
-        <form action="" method="post">
+        <form id="myform" method="post">
             <div class="cont">
-                <input type="text" placeholder="用户名/手机/号邮箱/会员卡号">
+                <input type="text" placeholder="用户名/手机/号邮箱/会员卡号" name="username">
                 <img src="images/ren.png">
             </div>
             <div class="cont">
-                <input type="text" placeholder="请输入密码">
+                <input type="text" placeholder="请输入密码" name="password">
                 <img src="images/password.png">
             </div>
             <div class="zi">
@@ -39,7 +66,7 @@
                 <div style="clear"></div>
             </div>
             <div class="btn">
-                <p><a href="#">登录</a></p>
+                <p id="log"><a>登录</a></p>
             </div>
             <p class="mfzc"><a href="#">免费注册 有惊喜></a></p>
             <div class="sec">

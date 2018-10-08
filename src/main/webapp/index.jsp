@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -19,23 +20,9 @@
 <body>
 <!--整合网页最大框架-->
 <div id="app">
-    <!--顶部-->
-    <div class="top">
         <!--顶部内容-->
-        <div class="top_next">
-            <ul class="nav">
-                <li><a href="<%=basePath%>index.jsp" target="_parent">首页</a></li>
-                <li><a href="jsp/backstage/customer/login.jsp" target="_parent">请登录</a></li>
-                <li><a>购物车</a></li>
-                <li><a>6+2会员</a></li>
-                <li><a>我的订单</a></li>
-                <li><a>联系客服</a></li>
-                <li><a>更多</a></li>
-            </ul>
-            <!--顶部内容框架结束 -->
-        </div>
+      <jsp:include page="jsp/backstage/customer/top.jsp"></jsp:include>
         <!--顶部框架结束 -->
-    </div>
     <!--搜索框开始-->
     <div id="header">
         <div class="header_next">

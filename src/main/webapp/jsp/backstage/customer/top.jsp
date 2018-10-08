@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -18,13 +19,16 @@
 <body>
 <!--顶部-->
 <div class="top">
-    <!--顶部-->
-    <div class="top">
         <!--顶部内容-->
         <div class="top_next">
             <ul class="nav">
                 <li><a href="<%=basePath%>index.jsp" target="_parent">首页</a></li>
-                <li><a href="login.jsp" target="_parent">请登录</a></li>
+                <c:if test="${sessionScope.customer!=null}">
+                    <li>${sessionScope.customer.username}</li>
+                </c:if>
+                <c:if test="${sessionScope.customer==null}">
+                     <li><a href="jsp/backstage/customer/login.jsp" target="_parent">请登录</a></li>
+                </c:if>
                 <li><a>购物车</a></li>
                 <li><a>6+2会员</a></li>
                 <li><a>我的订单</a></li>
@@ -32,8 +36,7 @@
                 <li><a>更多</a></li>
             </ul>
             <!--顶部内容框架结束 -->
-        </div>
-        <!--顶部框架结束 -->
-    </div>
+            </div>
+</div>
 </body>
 </html>
