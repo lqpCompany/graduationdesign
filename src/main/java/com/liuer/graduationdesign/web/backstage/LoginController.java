@@ -27,11 +27,11 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/login")
-	public Map<String,Integer> login(String username, String password,HttpSession session){
+	public Map<String,Integer> login(String phone, String password,HttpSession session){
 		//创建一个map集合
 		Map<String,Integer> map=new HashMap<>();
 		Customer customer=new Customer();
-		if(customerService.login(username, password)){
+		if(customerService.login(phone, password)){
 			session.setAttribute("customer",customer);
 			//如果返回的数据为1，则表示成功
 			map.put("status",1);

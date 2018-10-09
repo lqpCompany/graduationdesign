@@ -20,16 +20,16 @@ public class AdminServiceTest extends SpringJunitTest{
         System.out.println(adminService.login("username","123456"));
     }
     @Test
-    public  void deltelTest(){
+    public  void deleteTest(){
         adminService.delete(2);
     }*/
     @Test
     public void addTest(){
-        Customer admin=new Customer();
-        admin.setName("li2");
-        admin.setPassword("133");
-        admin.setUsername("li1");
-        adminService.add(admin);
-        System.out.println(admin);
+        Customer customer=new Customer();
+        customer.setUsername("li2");
+        customer.setPassword("133");
+        customer.setUsername("li1");
+        adminService.add(customer);
+        System.out.println(customer);
     }
 }

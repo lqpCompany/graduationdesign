@@ -15,15 +15,15 @@ public class CustomerDaoTest extends SpringJunitTest{
         private CustomerDao customerDao;
         @Test
         public void loginTest(){
-                Customer admin= customerDao.login("user","123456");
-                System.out.println(admin.getName());
+                Customer customer= customerDao.login("13471771185","123456");
+                System.out.println(customer.getPhone());
         }
         /*
         * 根据id删除用户信息
         *@return返回0表示不存在该用户信息
         * */
         @Test
-        public  void deltelTest(){
+        public  void deleteTest(){
                 System.out.println(customerDao.delete(3));
         }
          /*
@@ -43,11 +43,11 @@ public class CustomerDaoTest extends SpringJunitTest{
         * */
          @Test
         public void addTest(){
-                Customer admin=new Customer();
-                admin.setUsername("li2");
-                admin.setName("hao1");
-                admin.setPassword("123");
-                customerDao.add(admin);
-                System.out.println(admin);
+                Customer customer=new Customer();
+                customer.setUsername("li2");
+                customer.setUsername("hao1");
+                customer.setPassword("123");
+                customerDao.add(customer);
+                System.out.println(customer);
         }
 }

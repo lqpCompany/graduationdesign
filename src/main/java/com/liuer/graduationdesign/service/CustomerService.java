@@ -15,8 +15,8 @@ public class CustomerService {
     @Resource
     private CustomerDao customerDao;
    /* 用户登录*/
-    public boolean login(String username, String password) {
-        Customer customer= customerDao.login(username,password);
+    public boolean login(String phone, String password) {
+        Customer customer= customerDao.login(phone,password);
         if (customer!=null){
             return true;
         }else{

@@ -6,7 +6,7 @@
 
     <!-- 处理登录操作 -->
     <select id="login"  resultType="Customer">
-        select * from customer where username=#{username} and password=#{password}
+        select * from customer where phone=#{phone} and password=#{password}
     </select>
     <!--删除操作-->
     <delete id="delete">
@@ -18,7 +18,7 @@
     </select>
     <!--添加操作-->
     <insert id="add">
-          insert into customer(id,username,password,name)
-          values(null,#{username},#{password},#{name})
+          insert into customer(id,username,password,phone,address,email)
+          values(null,#{username},#{password},#{phone},#{address},#{email})
     </insert>
 </mapper>

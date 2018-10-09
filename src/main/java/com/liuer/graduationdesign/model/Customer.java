@@ -1,10 +1,15 @@
 package com.liuer.graduationdesign.model;
 
+/**
+ * Created by Administrator on 2018/9/29 0029.
+ */
 public class Customer {
     private Integer id;
-    private String name;
     private String username;
     private String password;
+    private String phone;
+    private String address;
+    private String email;
 
     public Integer getId() {
         return id;
@@ -14,13 +19,6 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getUsername() {
         return username;
@@ -36,5 +34,29 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
