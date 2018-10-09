@@ -65,7 +65,7 @@ body{
 .cont input{
 	width:90%;
 	height:40px;
-	padding-left:20%;
+	padding-left:19%;
 	border:1px solid #cecece;
 	outline:none;
 }
@@ -73,18 +73,17 @@ body{
 	position: relative;
 	margin-top:30px;
 }
-.cont p{
+.cont img{
 	position: absolute;
+	width:4%;
+	top:9px;
+	left:2%;
+}
+.cont p{
 	position: absolute;
 	width: 12%;
 	top: 10px;
 	left: 7%;
-}
-.cont img{
-	position: absolute;
-	width:4%;
-	top:7px;
-	left:2%;
 }
 .zi{
 	width:85%;
@@ -94,32 +93,34 @@ body{
 .zi span a{
 	text-decoration:none;
 	color:#000;
-	font-size:16px;
+	font-size:10px;
 }
 .zi span:nth-child(2){
 	float:right;
 }
 .btn{
-	width:90%;
+	width:100%;
 	height:40px;
 	margin-top:10px;
 	background:#fa8951;
 	cursor: pointer;
-	
 }
 .btn p{
 	color:#fff;
 	font-size:16px;
 	line-height:40px;
 	text-align:center;
-	letter-spacing: 50px;
+	letter-spacing: 15px;
+}
+.btn p a{
+	text-decoration:none;
+	color:#fff;
 }
 .mfzc{
 	text-align:center;
 	color:#000;
-	font-size:16px;
+	font-size:10px;
 	margin-top:10px;
-	width: 82%;
 }
 .mfzc a{
 	color:#000;
@@ -127,6 +128,7 @@ body{
 }
 .sec{
 	width:90%;
+
 	margin-top:10%;
 }
 .sec span{
@@ -152,8 +154,8 @@ body{
 	background:#cecece;
 }
 .qq{
-	width:65%;
-	margin:10px 50px;
+	width:60%;
+	margin:30px auto;
 	padding-bottom:50px;
 }
 .qq li{

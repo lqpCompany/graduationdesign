@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/10/1
-  Time: 23:36
+  Date: 2018/10/9
+  Time: 22:58
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,16 +10,17 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+
 <html>
 <head>
-    <title>用户注册</title>
-    <link href="CSS/index.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/sigin.css" rel="stylesheet" type="text/css" />
+    <title>找回密码</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/forget.css" />
 </head>
 <body>
 <jsp:include page="top.jsp"></jsp:include>
 <div class="part1">
-    <p><a href="login.jsp">我已注册马上登录》》</a></p>
+    <p><a href="login.jsp">登录》》</a></p>
     <div style="clear"></div>
 </div>
 <div class="part2">
@@ -27,29 +28,19 @@
         <form action="" method="post">
             <div class="cont">
                 <p>姓&nbsp;&nbsp;名</p>
-                <input type="text" placeholder="请输入姓名">
+                <input type="text" placeholder="请输入用户名">
                 <img src="images/name.png" />
 
             </div>
             <div class="cont">
-                <p>密&nbsp;&nbsp;码</p>
-                <input type="text" placeholder="请输入密码">
-                <img src="images/password.png" />
-
-            </div>
-            <div class="cont">
                 <p>手机号码</p>
-                <input type="text" placeholder="请输入手机号">
-                <img src="images/phine.png" />
-
+                <input type="text" placeholder="请输入手机号码">
+                <img src="images/mibao.png" />
             </div>
-
-
             <div class="cont">
-                <p>E-mali</p>
-                <input type="text" placeholder="请输入emali">
-                <img src="images/emaile.png">
-
+                <p>设置密码</p>
+                <input type="text" placeholder="请设置密码">
+                <img src="images/password.png" />
             </div>
             <div class="sec">
                 <div class="zi">
@@ -59,7 +50,8 @@
                 </div>
 
                 <div class="btn">
-                    <p>提交注册</p>
+
+                    <p><a href="#">找回密码</a></p>
                 </div>
                 <br>
                 </br>

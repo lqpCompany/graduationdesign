@@ -13,7 +13,7 @@
 <html>
 <head>
     <title>底部内容</title>
-    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!--底部-->
@@ -24,5 +24,6 @@
         <p>京公网安备13677788948号</p>
     </div>
 </div>
+<!--底部结束-->
 </body>
 </html>
