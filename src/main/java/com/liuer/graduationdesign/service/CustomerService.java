@@ -2,6 +2,7 @@ package com.liuer.graduationdesign.service;
 
 import com.liuer.graduationdesign.dao.CustomerDao;
 import com.liuer.graduationdesign.model.Customer;
+import com.liuer.graduationdesign.model.exception.MyFormException;
 import com.liuer.graduationdesign.service.CustomerService;
 import org.springframework.stereotype.Service;
 
@@ -24,12 +25,22 @@ public class CustomerService {
         }
     }
     /* 用户注册*/
-    public boolean add(Customer customer){
+    public boolean add(Customer customer) throws MyFormException{
         customerDao.add(customer);
-        if (customer!=null){
-            return true;
+        if(customer!=null){
+            if(customer.getUsername().equals("")){
+                throw new MyFormException("添加失败：用户名不能为空");
+            }
+            if(customer.getPhone().equals("")){
+                throw new MyFormException("添加失败：电话号码不能为空");
+            }
+            if(customer.getPassword().equals("")){
+                throw new MyFormException("添加失败：密码不能为空");
+            }else{
+                throw new MyFormException("添加失败：账户名重名");
+            }
         }else{
-            return false;
+            throw new MyFormException("添加失败：表单数据不能为空");
         }
     }
 

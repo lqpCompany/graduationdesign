@@ -14,7 +14,7 @@
 <html>
 <head>
     <title>首页</title>
-    <link href="jsp/backstage/customer/CSS/index.css" rel="stylesheet" type="text/css" />
+    <link href="jsp/backstage/customer/css/index.css" rel="stylesheet" type="text/css" />
     <link href="jsp/backstage/customer/font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="jsp/backstage/customer/JS/jquery.min.js" ></script>
     <script type="text/javascript" src="jsp/backstage/customer/JS/index.js" ></script>

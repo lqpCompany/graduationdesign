@@ -13,8 +13,8 @@
 <html>
 <head>
     <title>用户登录</title>
-    <link href="CSS/index.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/login.css" rel="stylesheet" type="text/css" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="JS/jquery.min.js" ></script>
     <script>
         $(function() {
@@ -36,7 +36,7 @@
 
                         }else{
                             alert("登录失败1");
-                            $(location).attr('href', 'loginerror.jsp');
+                            /*$(location).attr('href', 'loginerror.jsp');*/
                         }
                     });
             });
@@ -51,15 +51,15 @@
         </div>
         <div class="part2">
             <div class="part2-con">
-                <form action="" method="post">
+                <form id="myform" method="post">
                     <div class="cont">
                         <p>手机号码</p>
-                        <input type="text" placeholder="请输入手机号码">
+                        <input type="text" name="phone" placeholder="请输入手机号码">
                         <img src="images/name.png">
                     </div>
                     <div class="cont">
                         <p>密&nbsp;&nbsp;&nbsp;&nbsp;码</p>
-                        <input type="text" placeholder="请输入密码">
+                        <input type="password" name="password" placeholder="请输入密码">
                         <img src="images/password.png">
                     </div>
                     <div class="zi">
@@ -67,7 +67,7 @@
                         <span><a href="reight.jsp">忘记密码？</a></span>
                         <div style="clear"></div>
                     </div>
-                    <div class="btn">
+                    <div class="btn" id="log">
                         <p>登录</p>
                     </div>
                     <p class="mfzc"><a href="forget.jsp">免费注册></a></p>
