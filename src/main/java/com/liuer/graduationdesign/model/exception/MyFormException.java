@@ -14,9 +14,7 @@ public class MyFormException extends RuntimeException {
     public MyFormException(String message, Throwable cause) {
         super(message, cause);
     }
-
-
-
+    
     public MyFormException(Throwable cause) {
         super(cause);
     }

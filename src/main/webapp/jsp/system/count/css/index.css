@@ -7,7 +7,9 @@
 .navbar{
 	margin-bottom: 0px;
 }
-
+a{
+	cursor: pointer;
+}
 
             #main-nav.nav-tabs.nav-stacked>li>a {
             	padding: 10px 8px;
@@ -53,7 +55,7 @@
             }
             
             #main-nav.nav-tabs.nav-stacked>li {
-            	margin-bottom: 4px;
+            	margin-bottom: 2px;
             }
             /*控制菜单箭头*/
 			.nav-header.collapsed > span.glyphicon-chevron-toggle:before {
@@ -82,7 +84,7 @@
         }
 
         .navbar-brand {
-            background: url('') no-repeat 10px 8px;
+            background: no-repeat 10px 8px;
             display: inline-block;
             vertical-align: middle;
             padding-left: 50px;

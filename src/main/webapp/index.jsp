@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -7,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix='fmt' uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,10 +15,11 @@
 <html>
 <head>
     <title>首页</title>
-    <link href="jsp/backstage/customer/css/index.css" rel="stylesheet" type="text/css" />
-    <link href="jsp/backstage/customer/font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="jsp/backstage/customer/JS/jquery.min.js" ></script>
-    <script type="text/javascript" src="jsp/backstage/customer/JS/index.js" ></script>
+    <link href="<%=basePath%>jsp/resources/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="<%=basePath%>jsp/resources/font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="<%=basePath%>jsp/resources/jquery.js" ></script>
+    <script type="text/javascript" src="<%=basePath%>jsp/resources/JS/index.js" ></script>
+    <script type="text/javascript" src="<%=basePath%>jsp/resources/JS/slide.js"></script>
     <script>
         $(document).ready(function(){
             /*鼠标放到导航*/
@@ -42,13 +44,13 @@
 <!--整合网页最大框架-->
 <div id="app">
         <!--顶部内容-->
-      <jsp:include page="jsp/backstage/customer/top.jsp"></jsp:include>
+      <jsp:include page="jsp/backstage/top.jsp"></jsp:include>
     <!--搜索框开始-->
     <div id="header">
         <div class="header_next">
             <!--放置logo-->
             <div class="logo">
-                <img src="jsp/backstage/customer/images/logo.jpg" />
+                <img src="<%=basePath%>jsp/resources/images/logo.jpg" />
             </div>
             <!--搜索框-->
             <div id="search">
@@ -73,7 +75,7 @@
                         <div class="gouwu">
                             <ul class="ziti">我的购物车</ul>
                         </div>
-                        <img src="jsp/backstage/customer/images/gouwu.png" />
+                        <img src="<%=basePath%>jsp/resources/images/gouwu.png" />
                     </a>
                 </div>
             </div>
@@ -83,10 +85,10 @@
         <!--搜索框结束-->
     </div>
     <!--中部框架开始-->
-    <div id="central ">
+    <div id="central">
         <div class="central_c1 central_c2">
             <div class="navitems">
-                <div class="fl">全部分类</div>
+                <div class="fl"><a href="<%=basePath%>backstage/list">全部分类</a></div>
                 <div class="dh">
                     <ul class="navitems_next">
                         <li><a href="#">秒杀</a></li>
@@ -105,8 +107,8 @@
                 <!--第一模块开始-->
                 <div class="z1">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/phone.png" style="width: 30px; height: 30px; float: left;">
-                            <a href="#">手机/</a>
+                        <li><img src="<%=basePath%>jsp/resources/images/phone.png" style="width: 30px; height: 30px; float: left;">
+                            <a href="${goodsType.id}">手机/</a>
                             <a href="#">运营商/</a>
                             <a href="#">智能数码</a>
                         </li>
@@ -195,7 +197,7 @@
                 </div>
                 <div class="z2">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/dianshi.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/dianshi.png" style="width: 30px; height: 30px; float: left;">
                             <a href="#">电视/</a>
                             <a href="#">冰箱</a>
                             <a href="#">空调/</a>
@@ -288,7 +290,7 @@
 
                 <div class="z3">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/huazhuang.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/huazhuang.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">个护化妆/</a>
                             <a href="">纸品清洁/</a>
                             <a href="">宠物</a>
@@ -379,7 +381,7 @@
 
                 <div class="z4">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/tel.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/tel.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">电脑办公/</a>
                             <a href="">相机/</a>
                             <a href="">DIY</a>
@@ -471,7 +473,7 @@
 
                 <div class="z5">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/xie.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/xie.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">鞋靴/</a>
                             <a href="">箱包/</a>
                             <a href="">钟表/</a>
@@ -563,7 +565,7 @@
 
                 <div class="z6">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/baby.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/baby.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">母婴/</a>
                             <a href="">玩具/</a>
                             <a href="">车床/</a>
@@ -656,7 +658,7 @@
 
                 <div class="z7">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/jiaju.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/jiaju.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">家具/</a>
                             <a href="">家装/</a>
                             <a href="">家纺</a>
@@ -747,7 +749,7 @@
 
                 <div class="z8">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/jiu.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/jiu.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">食品/</a>
                             <a href="">酒水/</a>
                             <a href="">生鲜/</a>
@@ -840,7 +842,7 @@
 
                 <div class="z9">
                     <ul>
-                        <li><img src="jsp/backstage/customer/images/fu.png" style="width: 30px; height: 30px; float: left;">
+                        <li><img src="<%=basePath%>jsp/resources/images/fu.png" style="width: 30px; height: 30px; float: left;">
                             <a href="">男装/</a>
                             <a href="">女装/</a>
                             <a href="">内衣/</a>
@@ -937,17 +939,17 @@
                 <div id="slider-wrap">
                     <ul id="slider">
                         <li>
-                            <img src="jsp/backstage/customer/images/timg3.jpg" style="height: 450px; width: 670px;"/>
+                            <img src="<%=basePath%>jsp/resources/images/timg3.jpg"/>
 
                         </li>
                         <li>
-                            <img src="jsp/backstage/customer/images/timg3.jpg" style="height: 450px; width: 670px;"/>
+                            <img src="<%=basePath%>jsp/resources/images/timg3.jpg"/>
                         </li>
                         <li>
-                            <img src="jsp/backstage/customer/images/timg3.jpg" style="height: 450px; width: 670px;"/>
+                            <img src="<%=basePath%>jsp/resources/images/timg3.jpg"/>
                         </li>
                         <li>
-                            <img src="jsp/backstage/customer/images/timg3.jpg" style="height: 450px; width: 670px;"/>
+                            <img src="<%=basePath%>jsp/resources/images/timg3.jpg"/>
                         </li>
                     </ul>
                     <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
@@ -958,14 +960,13 @@
             <div class="fs3">
                 <a href="#">
                     <div>
-                        <img src="jsp/backstage/customer/images/by09.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by09.gif" />
                     </div>
                     <div class="fs3_next">
-                        <img src="jsp/backstage/customer/images/by13.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by13.gif" />
                     </div>
                 </a>
             </div>
-            <script type="text/javascript" src="jsp/backstage/customer/js/slide.js"></script>
         </div>
     </div>
     <!--中部框架结束-->
@@ -975,45 +976,24 @@
             <div class="miaosha_next">
                 <!--左边倒计时-->
                 <div class="count ">
-                    <img src="jsp/backstage/customer/images/by17.gif" width="190px" />
+                    <img src="<%=basePath%>jsp/resources/images/by17.gif" width="190px" />
                 </div>
                 <!--倒计时旁边的图片-->
                 <div class="count_right">
                     <!--中间四张图片-->
                     <div class="imgs">
-                        <a href="#">
-                            <div class="pic"><img src="jsp/backstage/customer/images/by20.gif" />
-                                <p>巨水光控油收缩毛孔化妆水</p>
+                        <c:forEach var="g" items="${goods}">
+                            <a href="<%=basePath%>backstage/details/${g.id}"/>
+                            <div class="pic">
+                                <img src="<%=basePath%>${g.goodsImage}" />
+                                <p>${g.goodsName}</p>
                                 <div class="button">
-                                    ￥1099
-                                    <div class="xk"><del>￥1499</del></div>
+                                    ￥<fmt:formatNumber type="number" value="${g.goodsPrice*g.rebate }" pattern="0.00" maxFractionDigits="2"/>
+                                    <div class="xk"><del>￥${g.goodsPrice}</del></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="#">
-                            <div class="pic"><img src="jsp/backstage/customer/images/by22.gif" />
-                                <p>优质保温水壶特卖</p>
-                                <div class="button">￥499
-                                    <div class="xk"><del>￥699</del></div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="pic"><img src="jsp/backstage/customer/images/by24.gif" />
-                                <p>靓丽人生，从这里开始</p>
-                                <div class="button">￥8999
-                                    <div class="xk"><del>￥10099</del></div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="pic"><img src="jsp/backstage/customer/images/by26.gif" />
-                                <p>轻奢、简约唤醒生活</p>
-                                <div class="button">￥1099
-                                    <div class="xk"><del>￥1099</del></div>
-                                </div>
-                            </div>
-                        </a>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -1024,11 +1004,11 @@
                 <a href="#">专属您的购物指南</a>
                 <a href="#">
                     <div class="th_1">
-                        <img src="jsp/backstage/customer/images/by34.gif" />
-                        <img src="jsp/backstage/customer/images/by36.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by34.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by36.gif" />
                     </div>
                     <div class="th_2">
-                        <img class="th_2_one" src="jsp/backstage/customer/images/by45.gif" />
+                        <img class="th_2_one" src="<%=basePath%>jsp/resources/images/by45.gif" />
                     </div>
                 </a>
             </div>
@@ -1037,7 +1017,7 @@
                 <a href="#">甄选优质好物</a>
                 <div class="th_2">
                     <a href="#">
-                        <img class="th_2_next" src="jsp/backstage/customer/images/by38.gif" />
+                        <img class="th_2_next" src="<%=basePath%>jsp/resources/images/by38.gif" />
                     </a>
                     <a href="#">外形出众，内部特别，内外兼修</a><br>
                     <a href="#">少就是多，经典不解释</a><br>
@@ -1051,8 +1031,8 @@
                     <a href="#">你想逛的都在这里</a>
                     <a href="#">
                         <div class="th_3">
-                            <img src="jsp/backstage/customer/images/by40.gif" />
-                            <img src="jsp/backstage/customer/images/by46.gif" />
+                            <img src="<%=basePath%>jsp/resources/images/by40.gif" />
+                            <img src="<%=basePath%>jsp/resources/images/by46.gif" />
                         </div>
                     </a>
                 </div>
@@ -1061,26 +1041,26 @@
                 <div class="d_th4">
                     <div class="xd_th4"></div>
                     <div class="tu">
-                        <img src="jsp/backstage/customer/images/by52.gif" />
-                        <img src="jsp/backstage/customer/images/by63.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by52.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by63.gif" />
                     </div>
                 </div>
             </a>
             <a href="#">
                 <div class="th5">
                     <div class="th_5">
-                        <img src="jsp/backstage/customer/images/by58.gif" />
-                        <img src="jsp/backstage/customer/images/by60.gif" />
-                        <img src="jsp/backstage/customer/images/by70.gif" />
-                        <img src="jsp/backstage/customer/images/by67.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by58.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by60.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by70.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by67.gif" />
                     </div>
                 </div>
             </a>
             <a href="#">
                 <div class="th6">
                     <div class="th_6">
-                        <img src="jsp/backstage/customer/images/by55.gif" />
-                        <img src="jsp/backstage/customer/images/by68.jpg" />
+                        <img src="<%=basePath%>jsp/resources/images/by55.gif" />
+                        <img src="<%=basePath%>jsp/resources/images/by68.jpg" />
                     </div>
                 </div>
             </a>

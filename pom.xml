@@ -67,6 +67,20 @@
       <version>${mybatis_spring.version}</version>
     </dependency>
 
+    <!--————————————————————上传图片组件————————————————————-->
+    <!-- https://mvnrepository.com/artifact/net.kindeditor/filemanager -->
+    <dependency>
+      <groupId>net.kindeditor</groupId>
+      <artifactId>filemanager</artifactId>
+      <version>0.0.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1</version>
+    </dependency>
+
     <!--————————————————————引入Spring包（下面）————————————————————-->
 
     <!--引入Spring核心-->

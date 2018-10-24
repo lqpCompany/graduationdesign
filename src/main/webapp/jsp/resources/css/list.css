@@ -1,0 +1,97 @@
+a:hover{color: red;}
+.top1{
+	width: 1190px;
+	margin:50px 150px;
+	height: 600px;
+}
+.top1 h2{
+	width: 1190px;
+}
+.jx{
+	width: 25%;
+	height: 510px;
+	float: left;
+	text-align: center;
+	line-height: 7px;
+}
+.tu{
+	width: 100%;
+	height: 400px;
+	text-align: center;
+	opacity:0.8;
+	filter(alpha=80);
+}
+.tu:hover {
+	opacity:1;
+	filter(alpha=100);
+}
+h3{
+	font-family: "黑体";
+}
+h6{
+	font-family: "黑体";
+	color: #A9A9A9;
+}
+.button {
+	width: 200px;
+	height: 25px;
+	margin-left: 45px;
+	background: #e6382f;
+	color: #fbfffb;
+	font-size: 15px;
+	line-height: 22px;
+	text-align: center;
+}
+.xk {
+	width: 50%;
+	height: 23px;
+	background-color: #fff;
+	border: 1px solid #FF0000;
+	float: right;
+	color: #000000;
+	font-size: 15px;
+	text-align: center;
+}
+.centre{
+	width: 1190px;
+	height: 450px;
+	margin: 0 auto;
+}
+.jx1{
+	width: 25%;
+	height: 410px;
+	float: left;
+	line-height: 30px;
+}
+.jx1 > a{
+	letter-spacing: 3px;
+}
+.tu1{
+	width: 100%;
+	height: 250px;
+	text-align: center;
+	border: solid 1px #A9A9A9;
+	opacity:0.8;
+	filter(alpha=80);
+}
+.tu1:hover {
+	opacity:1;
+	filter(alpha=100);
+}
+.xia{
+	width: 1190px;
+	height: 100%;
+	margin: 0 auto;
+}
+.tu2{
+	width: 100%;
+	height: 270px;
+	text-align: center;
+	border: solid 1px #A9A9A9;
+	opacity:0.8;
+	filter(alpha=80);
+}
+.tu2:hover {
+	opacity:1;
+	filter(alpha=100);
+}

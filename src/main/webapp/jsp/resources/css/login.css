@@ -1,0 +1,183 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family:"微软雅黑";
+	background:#fff;
+}
+.clear{
+	clear:both;
+}
+.top{
+	width:100%;
+	height:45px;
+	background:#dddfde;
+}
+.top-con{
+	width:1200px;
+	margin:0 auto;
+}
+.top-con ul{
+	float:right;
+}
+.top-con li{
+	list-style:none;
+	float:left;
+	line-height:45px;
+	font-size:14px;
+	text-align:right;
+	margin-right:15px;
+}
+.top-con li a{
+	text-decoration:none;
+	color:#000;
+	border-right:1px solid #000;
+	padding-right:15px;
+}
+.top-con li:nth-child(1) a{
+	border-right:none;
+}
+.top-con li:nth-child(6) a{
+	border-right:none;
+}
+.part1{
+	width:1200px;
+	margin:0 auto;
+	margin-top:35px;
+}
+.part1 p{
+	font-size:14px;
+	color:#000;
+	text-align: right;
+}
+.part2{
+	width:1200px;
+	height:auto;
+	margin:10px auto;
+	border:1px solid #cecece;
+	border-top:1px solid #fa8951;
+}
+.part2-con{
+	width:50%;
+	margin:90px auto;
+}
+.cont input{
+	width:90%;
+	height:40px;
+	padding-left:20%;
+	border:1px solid #cecece;
+	outline:none;
+}
+.cont{
+	position: relative;
+	margin-top:30px;
+}
+.cont p{
+	position: absolute;
+	position: absolute;
+	width: 12%;
+	top: 10px;
+	left: 7%;
+}
+.cont img{
+	position: absolute;
+	width:4%;
+	top:7px;
+	left:2%;
+}
+.zi{
+	width:85%;
+	margin:0 auto;
+	margin-top:35px;
+}
+.zi span a{
+	text-decoration:none;
+	color:#000;
+	font-size:16px;
+}
+.zi span:nth-child(2){
+	float:right;
+}
+#button{
+	width:90%;
+	height:40px;
+	margin-top:10px;
+	background:#fa8951;
+	border:0 none;
+	color: #FFFFFF;
+	font-size: 17px;
+}
+.mfzc{
+	text-align:center;
+	color:#000;
+	font-size:16px;
+	margin-top:10px;
+	width: 82%;
+}
+.mfzc a{
+	color:#000;
+	text-decoration:none;
+}
+.sec{
+	width:90%;
+	margin-top:10%;
+}
+.sec span{
+	display:block;
+	float:left;
+}
+.sec span:nth-child(1){
+	width:33%;
+	height:1px;
+	margin-top:10px;
+	background:#cecece;
+}
+.sec span:nth-child(2){
+	font-size:16px;
+	color:#cecece;
+	width:33%;
+	text-align:center;
+}
+.sec span:nth-child(3){
+	width:33%;
+	height:1px;
+	margin-top:10px;
+	background:#cecece;
+}
+.qq{
+	width:65%;
+	margin:10px 50px;
+	padding-bottom:50px;
+}
+.qq li{
+	float:left;
+	width:25%;
+	padding-top:30px;
+	list-style:none;
+}
+.qq li img{
+	width:30%;
+	vertical-align:middle;
+}
+.qq li span{
+	font-size:14px;
+	padding-left:10px;
+	border-right:1px solid #8d8d8d;
+	padding-right:7px;
+}
+.footer{
+	background:#cfd3d4;
+	width:100%;
+	height:200px;
+	margin-top:95px;
+}
+.foot{
+	padding-top:30px;
+}
+.foot p{
+	font-size:16px;
+	color:#fff;
+	text-align:center;
+	margin-top:5px;
+}

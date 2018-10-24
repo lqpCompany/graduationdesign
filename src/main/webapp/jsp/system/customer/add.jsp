@@ -13,17 +13,37 @@
 <html>
 <head>
     <title>添加用户信息</title>
-    <link rel="stylesheet" href="../count/bootstrap/css/bootstrap.min.css" />
-    <script src="../count/js/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="../count/bootstrap/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="<%=basePath%>jsp/system/count/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="<%=basePath%>jsp/system/count/js/jquery-1.11.0.js" ></script>
+    <script type="text/javascript" src="<%=basePath%>jsp/system/count/bootstrap/js/bootstrap.min.js" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button[name='add']").click(function() {
+                var $myForm = $("#myForm");//获取指定a标签的jquery对象
+                $.post("<%=basePath%>system/customer/doAddCustomer",
+                    $("#myForm").serialize(),
+                    function(data) {
+                        //jquery自带的json转换方法
+                        if(typeof data != 'object') { //如果不是JS对象（则为JSON格式的数据，如servlet输出的JSON），则转换成JS对象
+                            data = $.parseJSON(data);
+                        }
+                        alert(data.myMessage);
+                     /*  if(data.status == 1) {
+                           window.location.href = "system/customer/toManageCustomer";
+                        }*/
+                    }
+                );
+            });
+        });
+    </script>
 </head>
 <body>
 <h3>添加用户</h3>
-<form class="form-horizontal" action="" enctype="multipart/form-data" method="post">
+<form class="form-horizontal" id="myForm" enctype="multipart/form-data">
     <div class="form-group" style="padding-top: 20px;">
         <label for="name" class="col-sm-1 control-label" >用户昵称</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="username" name="username">
         </div>
     </div>
 
@@ -42,7 +62,7 @@
     <div class="form-group" style="padding-top: 20px;">
         <label for="detial" class="col-sm-1 control-label">E-emile</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="emile" name="emile">
+            <input type="text" class="form-control" id="email" name="email">
         </div>
     </div>
     <div class="form-group" style="padding-top: 20px;">
@@ -54,7 +74,7 @@
     <div class="form-group" style="padding-top: 20px;">
         <label class="col-sm-3 control-label"></label>
         <div class="col-sm-6">
-            <button class="btn btn-primary btn-sm">确认添加</button>
+            <button class="btn btn-primary btn-sm" name="add" type="button">确认添加</button>
 
         </div>
     </div>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 指明这个映射文件adminMapper.xml的逻辑路径,如果与接口建立映射，那么逻辑路径应该与接口的物理路径一致-->
+<mapper namespace="com.liuer.graduationdesign.dao.system.GoodsDao">
+    <!-- parameterType表示要传入的参数的类型 ，resultType表示要返回的数据的类型-->
+
+    <resultMap id="goods" type="goods">
+        <association property="goodstype" javaType="GoodsType" column="goodstypeId" select="com.liuer.graduationdesign.dao.system.GoodsTypeDao.get">
+        </association>
+    </resultMap>
+    <select id="readGoods" resultMap="goods">
+        select * from goods
+    </select>
+    <!--添加操作-->
+    <insert id="addGoods">
+        insert into goods(id,goodsName,goodsDescripttion,goodsPrice,goodstypeId,rebate,goodsImage)
+        values(null,#{goodsName},#{goodsDescripttion},#{goodsPrice},#{goodstype.id},#{rebate},#{goodsImage})
+    </insert>
+
+    <!--删除操作-->
+    <delete id="delete">
+        delete from goods where id=#{id}
+    </delete>
+
+    <!--根据id查找相关信息-->
+    <select id="get"  resultType="Goods">
+        select * from goods where id=#{id}
+    </select>
+    <!--重名查询-->
+    <select id="countGoodsByUsername"  resultType="int">
+        select count(id) from goods where goodsName=#{goodsName}
+    </select>
+
+    <!--修改操作-->
+    <update id="update" parameterType="Goods">
+        update goods
+        <!-- 使用set标签可以将动态的配置SET 关键字，和剔除追加到条件末尾的任何不相关的逗号。 -->
+        <set>
+           <if test="goodsImage!=null and goodsImage.length()>0">goodsImage=#{goodsImage},</if>
+            <if test="goodsName!=null and goodsName.length()>0">goodsName=#{goodsName},</if>
+            <if test="goodsPrice!=null and goodsPrice.length()>0">goodsPrice=#{goodsPrice},</if>
+            <if test="goodsDescripttion!=null and goodsDescripttion.length()>0">goodsDescripttion=#{goodsDescripttion},</if>
+            <if test="rebate!=null and rebate.length()>0">rebate=#{rebate},</if>
+            <if test="goodstype!=null and goodstype.id!=null">goodstype=#{goodstype.id},</if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

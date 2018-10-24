@@ -1,0 +1,351 @@
+.account .main .page {
+    background: #fff;
+    border-radius: 3px;
+    float: right;
+    padding: 30px;
+    width: 940px;
+}
+.account .main .page h3 {
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 0 !important;
+}
+.account .main .page h3 > * {
+    background: transparent !important;
+    display: inline-block;
+    font-size: 16px;
+    height: 36px;
+}
+.account .main .page h3 a {
+    font-size: 14px;
+}
+.account .main .page table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.account .main .page table tr {
+    border-bottom: 1px solid #ccc;
+}
+.account .main .page table td {
+    padding: 10px 0;
+    text-align: center;
+}
+.account .main .page table td:nth-child(1) {
+    text-align: left;
+    width: 120px;
+}
+.account .main .page table td:nth-child(2) {
+    text-align: left;
+    width: 120px;
+}
+.account .main .page table td:last-child {
+    width: 120px;
+}
+.account .main .page table td:nth-child(1) img {
+    width: 60px;
+}
+.account .main .page table td:nth-child(2) div:first-child {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.account .main .page table td:last-child a {
+    color: #81d2fb;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.account .main .page img {
+    margin-top: 20px;
+    width: 100%;
+}
+.index .container {
+    padding-top:20px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    position: relative;
+    width: 1200px;
+    z-index: 0;
+}
+.index .container .header {
+    height: 50px;
+}
+.index .container .header .logo {
+    float: left;
+}
+.index .container .header .sysmenu {
+    display: inline-block;
+    line-height: 50px;
+    margin: auto;
+}
+.index .container .header .sysmenu a {
+    color: #666;
+    padding: 0 30px;
+    text-decoration: none;
+}
+.index .container .header .sysmenu a:first-child {
+    color: #f1a61f;
+}
+.index .container .header .account {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    line-height: 50px;
+}
+.index .container .header .account img {
+    margin: 11px;
+}
+.index .container .header .account label {
+    color: #f1a61f;
+    float: right;
+    margin-right: 11px;
+}
+.index .container .search {
+    display: inline-block;
+    margin: 172px auto;
+}
+.index .container .search input {
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+    height: 46px;
+    padding: 0 12px;
+    width: 850px;
+}
+.index .container .search button {
+    background-image: url(../images/search.png);
+    border: none;
+    border-radius: 3px;
+    float: right;
+    margin-left: 12px;
+    height: 46px;
+    width: 46px;
+}
+.index .container .address {
+    background-color: #fff;
+    height: 50px;
+    line-height: 50px;
+}
+.index .container .address > * {
+    float: left;
+}
+.index .container .address label {
+    color: #ccc;
+    margin: 0 6px;
+}
+.index .container .address a {
+    color: #f1a61f;
+    margin: 0 9px;
+}
+.index .container .type-wrap {
+    background-color: #fff;
+    line-height: 50px;
+    margin-top: 20px;
+    min-height: 50px;
+}
+.index .container .type-wrap label {
+    color: #ccc;
+    float: left;
+    margin: 0 6px;
+}
+.index .container .type-wrap .types {
+    padding-left: 84px;
+    text-align: left;
+}
+.index .container .type-wrap .types a {
+    color: #333;
+    padding: 0 18px;
+}
+.index .container .type-wrap .types a:first-child {
+    /* color: #f1a61f; */
+}
+.index .container .main {
+    text-align: left;
+}
+.index .container .main h3 {
+    border-bottom: 1px solid #ccc;
+    height: 31px;
+    line-height: 60px;
+    margin-bottom: 29px;
+}
+.index .container .main h3 > * {
+    background: #f3f3f3;
+    padding: 0 6px;
+}
+.index .container .main h3 > span {
+    font-size: 18px;
+    font-weight: normal;
+}
+.index .container .main h3 > a {
+    color: #666;
+    float: right;
+}
+.index .container .main .item-wrap {
+    display: inline-block;
+    width: 100%;
+}
+.index .container .main .item-wrap .item {
+    float: left;
+    padding: 5px 25px;
+    width: 25%;
+}
+.index .container .main {
+    text-align: left;
+}
+.index .container .main h3 {
+    border-bottom: 1px solid #ccc;
+    height: 31px;
+    line-height: 60px;
+    margin-bottom: 29px;
+}
+.index .container .main h3 > * {
+    background: #f3f3f3;
+    padding: 0 6px;
+}
+.index .container .main h3 > span {
+    font-size: 18px;
+    font-weight: normal;
+}
+.index .container .main h3 > a {
+    color: #666;
+    float: right;
+}
+.index .container .main .item-wrap {
+    display: inline-block;
+    width: 100%;
+}
+.index .container .main .item-wrap .item {
+    float: left;
+    padding: 5px 25px;
+    width: 25%;
+}
+
+
+
+.account .main {
+    display: inline-block;
+    margin-top: 0 !important;
+    width: 100%;
+}
+.account .main .menu {
+    box-shadow: 0 0 5px #eee;
+    display: inline-block;
+    background: #fff;
+    border-radius: 3px;
+    padding: 6px 9px;
+    width: 240px;
+}
+.account .main .menu label {
+    display: block;
+    padding: 6px;
+}
+.account .main .menu label:first-child {
+    color: #f1a61f;
+}
+.account .main .menu label:not(:first-child) {
+    margin-top: 24px;
+}
+.account .main .menu label img {
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+.account .main .menu a {
+    color: #666;
+    display: block;
+    padding: 12px 3em;
+    border-bottom: 1px solid #ccc;
+}
+.account .main .menu a:last-child {
+    border: none;
+}
+.account .main .page {
+    background: #fff;
+    border-radius: 3px;
+    float: right;
+    padding: 20px;
+    width:880px;
+}
+.account .main .page h3 {
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 0 !important;
+}
+.account .main .page h3 > * {
+    background: transparent !important;
+    display: inline-block;
+    font-size: 16px;
+    height: 36px;
+}
+.account .main .page h3 a {
+    font-size: 14px;
+}
+.account .main .page table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.account .main .page table tr {
+    border-bottom: 1px solid #ccc;
+}
+.account .main .page table td {
+    padding: 10px 0;
+    text-align: center;
+}
+.account .main .page table td:nth-child(1) {
+    text-align: left;
+    width: 120px;
+}
+.account .main .page table td:nth-child(2) {
+    text-align: left;
+    width: 120px;
+}
+.account .main .page table td:last-child {
+    width: 120px;
+}
+.account .main .page table td:nth-child(1) img {
+    width: 60px;
+}
+.account .main .page table td:nth-child(2) div:first-child {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.account .main .page table td:last-child a {
+    color: #81d2fb;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.account .main .page img {
+    margin-top: 20px;
+    width: 100%;
+}
+.account .main .form {
+    margin: 20px 0;
+}
+.account .main .form .form-item {
+    display: inline-block;
+    line-height: 36px;
+    padding: 6px 0;
+    width: 100%;
+}
+.account .main .form .form-item label {
+    display: block;
+    float: left;
+    padding-right: 6px;
+    text-align: right;
+    width: 30%;
+}
+.account .main .form .form-item input {
+    border: 1px solid #ccc;
+    padding: 6px;
+    width: 40%;
+}
+.account .main .form .form-item.btns-item > button:first-child {
+    margin-left: 30%;
+    background: #f1a61f;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 90px;
+}

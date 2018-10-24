@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: ljyadbefgh
-  Date: 2018/9/6
-  Time: 13:19
+  User: Administrator
+  Date: 2018/10/1
+  Time: 22:52
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,41 +12,75 @@
 %>
 <html>
 <head>
-    <title>hello</title>
-    <%--引入juqery文件--%>
-    <script language="JavaScript" src="<%=basePath%>jquery.js"></script>
-    <%--使用juqery实现ajax登录--%>
-    <script>
-        $(function() {
-            //当单击登录按钮时
-            $("#abc").click(function() {
-                //使用ajax执行登录操作
-                //第一个参数指要访问的服务端地址；
-                //第二个参数，指要传递的表单的数据，$("#myForm").serialize()
-                //第三个参数，function(data)用于接收服务端返回来的值，data
-                $.post("<%=basePath%>backstage/login",//表示要跳转到的页面
-                    $("#myform").serialize(),//初始化表单
+    <title>用户登录</title>
+    <link href="<%=basePath%>jsp/resources/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="<%=basePath%>jsp/resources/css/login.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%=basePath%>jsp/resources/jquery.js" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button[name='login']").click(function() {
+                var $myForm = $("#myForm");//获取指定a标签的jquery对象
+                $.post("<%=basePath%>backstage/login",
+                    $("#myForm").serialize(),
                     function(data) {
-                        //根据服务端返回来的值，判断登录是否成功
-                        //获取的json数据是由Controller里面的map集合传过来
-                        if(data.status==1){
-                            //跳转的页面
-                            alert("登录成功");
-                            $(location).attr('href', 'loginsuccess.jsp');
-                        }else{
-                            alert("登录失败");
-                            $(location).attr('href', 'loginerror.jsp');
+                        //jquery自带的json转换方法
+                        if(typeof data != 'object') { //如果不是JS对象（则为JSON格式的数据，如servlet输出的JSON），则转换成JS对象
+                            data = $.parseJSON(data);
                         }
-                    });
+                        alert(data.myMessage);
+                        if(data.status == 1) {
+                            window.location.href = "<%=basePath%>index.jsp";
+                        }
+                    }
+                );
             });
         });
     </script>
 </head>
 <body>
-<form id="myform" method="post">
-    账户名：<input name="username">
-    密码：<input name="password">
-    <input id="abc" type="button" value="登录">
-</form>
+        <jsp:include page="top.jsp"></jsp:include>
+        <div class="part1">
+            <p><a href="<%=basePath%>jsp/backstage/forget.jsp">注册》》</a></p>
+            <div style="clear"></div>
+        </div>
+        <div class="part2">
+            <div class="part2-con">
+                <form id="myForm">
+                    <div class="cont">
+                        <p>手机号码</p>
+                        <input type="text" name="phone" placeholder="请输入手机号码" pattern="^1[3,5,4,8,7]\d{9}$" required>
+                        <img src="<%=basePath%>jsp/resources/images/name.png">
+                    </div>
+                    <div class="cont">
+                        <p>密&nbsp;&nbsp;&nbsp;&nbsp;码</p>
+                        <input type="password" name="password" placeholder="请输入密码" pattern="^[A-Za-z0-9]{6,20}" required>
+                        <img src="<%=basePath%>jsp/resources/images/password.png">
+                    </div>
+                    <div class="zi">
+                        <span><a href="#">短信验证登录</a></span>
+                        <span><a href="reight.jsp">忘记密码？</a></span>
+                        <div style="clear"></div>
+                    </div>
+                    <button type="button" id="button" name="login" >登录</button>
+                    <p class="mfzc"><a href="forget.jsp">免费注册></a></p>
+                    <div class="sec">
+                        <span></span>
+                        <span>使用一下账号登录</span>
+                        <span></span>
+                        <div style="clear"></div>
+                    </div>
+                    <div class="qq">
+                        <ul>
+                            <li><img src="<%=basePath%>jsp/resources/images/QQ.png"><span>QQ</span></li>
+                            <li><img src="<%=basePath%>jsp/resources/images/weixin.png"><span>微信</span></li>
+                            <li><img src="<%=basePath%>jsp/resources/images/zfb.png"><span>支付宝</span></li>
+                            <li><span>门店会员卡</span></li>
+                            <div style="clear"></div>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 指明这个映射文件adminMapper.xml的逻辑路径,如果与接口建立映射，那么逻辑路径应该与接口的物理路径一致-->
+<mapper namespace="com.liuer.graduationdesign.dao.backstage.GoodsDaoI">
+    <!-- parameterType表示要传入的参数的类型 ，resultType表示要返回的数据的类型-->
+    <resultMap type="Goods" id="goods">
+        <!--&lt;!&ndash; 关联对象属性association，property指属性名， &ndash;&gt;-->
+        <association property="goodstype" javaType="GoodsType" column="goodsType" select="com.liuer.graduationdesign.dao.GoodsTypeDao.get">
+        </association>
+    </resultMap>
+
+    <!--查询goods销量最多的前四条数据-->
+    <select id="readNewTop"  resultMap="goods">
+        select * from goods order by saleNum DESC limit 4
+    </select>
+
+    <select id="readAll" resultMap="goods">
+        select * from goods
+    </select>
+
+    <select id="get" resultType="Goods">
+        select * from goods where id=#{id}
+    </select>
+
+</mapper>

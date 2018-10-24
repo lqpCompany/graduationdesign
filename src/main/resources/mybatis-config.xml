@@ -7,12 +7,21 @@
 	<typeAliases>
 		<!-- 将com.lcvc.ebuytest3.model.Admin类重新起一个名字Admin，供mybatis的映射文件使用 -->
 		<typeAlias alias="Customer" type="com.liuer.graduationdesign.model.Customer"/>
+		<typeAlias alias="Admin" type="com.liuer.graduationdesign.model.Admin"/>
+		<typeAlias alias="GoodsType" type="com.liuer.graduationdesign.model.GoodsType"/>
+		<typeAlias alias="Goods" type="com.liuer.graduationdesign.model.Goods"/>
 	</typeAliases>
 
 	<mappers>
-		<!--注册adminMappe.xml文件 -->
-	    <mapper resource="com/liuer/graduationdesign/dao/mapper/customerMapper.xml"/>
+		<!--注册Mappe.xml文件 -->
+		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/adminMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/customerMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/goodstypeMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/goodsMapper.xml"/>
+		<!--前台映射文件-->
+		<mapper resource="com/liuer/graduationdesign/dao/backstage/mapper/customerMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/backstage/mapper/goodsMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao//backstage/mapper/goodsTypeMapper.xml"/>
 	</mappers>
-
 
 </configuration>  
