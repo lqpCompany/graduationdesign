@@ -30,10 +30,10 @@ public class IndexControllerI {
 	private GoodsServiceI goodsServiceI;
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(HttpServletRequest request) {
+	public String index(HttpServletRequest request,HttpSession session) {
 		//获取最新的8条产品集合
 		List<Goods> goods = goodsServiceI.getNewTopGoods();
-		request.setAttribute("goods", goods);
+		session.setAttribute("goods", goods);
 		return "backstage/index.jsp";
 	}
 

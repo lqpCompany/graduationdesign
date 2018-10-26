@@ -985,7 +985,7 @@
                         <c:forEach var="g" items="${goods}">
                             <a href="<%=basePath%>backstage/details/${g.id}"/>
                             <div class="pic">
-                                <img src="<%=basePath%>${g.goodsImage}" />
+                                <img src="${g.goodsImage}" />
                                 <p>${g.goodsName}</p>
                                 <div class="button">
                                     ￥<fmt:formatNumber type="number" value="${g.goodsPrice*g.rebate }" pattern="0.00" maxFractionDigits="2"/>
