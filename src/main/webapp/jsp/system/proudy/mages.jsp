@@ -23,7 +23,11 @@
             $('#detail-dialog').on('shown.bs.modal', function () {
                 $('#name').focus();
             });
-
+            $(".pagination li a").click(function () {
+                var url=$(this).attr("href");
+                $('#sub-page').load(url);
+                return false;
+            });
             $('.update').click(function() {
                 $.get('http://localhost:8080/graduationdesign/system/goods/edit/'+$(this).attr('value'),function(data){
                     $('#goodsName').val(data.goodsName);
@@ -32,6 +36,7 @@
                     $('#goodsImage').val(data.goodsImage);
                     $('#goodsDescripttion').val(data.goodsDescripttion);
                     $('#id').val(data.id);
+
                 });
                 $('#detail-dialog').modal();
                 return false;
@@ -47,9 +52,10 @@
                             data = $.parseJSON(data);
                         }
                         alert(data.myMessage);
-                        /* if (data.status==1){
-                         window.location.href = "system/admin/toAddAdmin";
-                         }*/
+                        if (data.status==1){
+                            alert("1111");
+                         window.location.href = "<%=basePath%>system/goods/mages";
+                         }
                     }
                 );
             });
@@ -79,25 +85,25 @@
 <table class="table table-hover table-bordered">
     <thead>
     <tr>
-        <th style="width: 10%;">ID</th>
-        <th style="width: 10%;">名称</th>
-        <th style="width: 10%;">类型</th>
-        <th style="width: 10%;">价格</th>
-        <th style="width: 10%;">原价</th>
-        <th style="width: 10%;">图片</th>
-        <th style="width: 20%;">描述</th>
+        <th style="width: 5%;text-align: center;">ID</th>
+        <th style="width: 10%;text-align: center;">名称</th>
+        <th style="width: 10%;text-align: center;">类型</th>
+        <th style="width: 10%;text-align: center;">价格</th>
+        <th style="width: 10%;text-align: center;">折扣</th>
+        <th style="width: 10%;text-align: center;">图片</th>
+        <th style="width: 25%;">描述</th>
         <th style="text-align: center;">操&nbsp;&nbsp;&nbsp;做</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="good" items="${requestScope.list}">
     <tr>
-        <td>${good.id}</td>
-        <td>${good.goodsName}</td>
-        <td>${good.goodstype.name}</td>
-        <td>${good.goodsPrice}</td>
-        <td>${good.rebate}</td>
-        <td><img style="width: 40px;" src="${good.goodsImage}"></td>
+        <td style="text-align: center">${good.id}</td>
+        <td style="text-align: center">${good.goodsName}</td>
+        <td style="text-align: center">${good.goodstype.name}</td>
+        <td style="text-align: center">${good.goodsPrice}</td>
+        <td style="text-align: center">${good.rebate}</td>
+        <td style="text-align: center"><img style="width: 40px;" src="${good.goodsImage}"></td>
         <td>${good.goodsDescripttion}</td>
         <td style="text-align: center;">
             <button  class="btn btn-primary btn-sm update" value="${good.id}">修改</button>
@@ -107,14 +113,16 @@
     </c:forEach>
     </tbody>
 </table>
+
+<ul class="pagination" style="float: left;">
+    共<i class="blue">${page.tatolCount}</i>条记录,当前显示第<i class="blue">${page.pageIndex}</i>页,共<i
+        class="blue">${page.pageCount}</i>页
+</ul>
 <ul class="pagination" style="float: right;">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
+    <li><a href="<%=basePath%>system/goods/MagesGoods?pageIndex=1">首页</a></li>
+    <li><a href="<%=basePath%>system/goods/MagesGoods?pageIndex=${page.pageIndex-1}">上一页</a></li>
+    <li><a href="<%=basePath%>system/goods/MagesGoods?pageIndex=${page.pageIndex+1}">下一页</a></li>
+    <li><a href="<%=basePath%>system/goods/MagesGoods?pageIndex=${page.tatolCount}">尾页</a></li>
 </ul>
 <!--模态框-->
 <div class="modal fade" id="detail-dialog" tabindex="-1" role="dialog">
@@ -136,18 +144,19 @@
                             <input type="text" class="form-control" id="goodsName" name="goodsName">
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label for="discount" class="col-sm-3 control-label">产品类型</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="goodstype.id" name="goodstype.id">
-                                <c:forEach var="g" items="${goodstype }">
-                                    <option value="${g.id }">${g.name }</option>
+                                <c:forEach var="g" items="${goodstype }" >
+                                <option value="${g.id }">${g.name }</option>
                                 </c:forEach>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="detial" class="col-sm-3 control-label">原价</label>
+                        <label for="detial" class="col-sm-3 control-label">折扣</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="rebate" name="rebate">
                         </div>
@@ -170,6 +179,7 @@
                             <input type="text" class="form-control" id="goodsDescripttion" name="goodsDescripttion"/>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">

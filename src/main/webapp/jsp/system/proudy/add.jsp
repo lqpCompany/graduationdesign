@@ -14,7 +14,6 @@
 <html>
 <head>
     <title>添加产品</title>
-
     <!-- 导入kindEditor所需插件 -->
     <link rel="stylesheet" href="<%=basePath%>jsp/plugins/kindeditor-4.1.10/themes/default/default.css" />
     <script src="<%=basePath%>jsp/plugins/kindeditor-4.1.10/kindeditor.js"></script>
@@ -22,7 +21,6 @@
 
     <link rel="stylesheet" href="<%=basePath%>jsp/system/count/bootstrap/css/bootstrap.min.css" />
     <script type="text/javascript">
-
         //实现kindeditor弹出图片上传窗口
         KindEditor.ready(function(K) {
             var editor = K.editor({//图片上传
@@ -93,7 +91,7 @@
         </div>
     </div>
     <div class="form-group" style="padding-top: 20px;">
-        <label for="detial" class="col-sm-1 control-label">原价</label>
+        <label for="detial" class="col-sm-1 control-label">折扣</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="rebate" name="rebate">
         </div>

@@ -26,23 +26,23 @@
 </head>
 <body>
 <!-- //添加navbar-fixed-top可以让导航条一直固定在顶部，不会因为滚动条改变而改变，navbar-inverse让导航条黑底展示-->
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top" style="background: #212121;">
     <div class="container">
         <div class="navbar-header">
             <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
             <a href="#" class="navbar-brand">6+2后台管理</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="customer/mages.jsp">用户管理</a></li>
-            <li><a href="admin/mages.jsp">管理员</a></li>
-            <li><a href="proudy/mages.jsp">商品管理</a></li>
+        <ul class="nav navbar-nav h">
+            <li class="active"><a href="<%=basePath%>system/admin/list">管理员管理</a></li>
+            <li><a href="<%=basePath%>system/customer/toManageCustomer">用户管理</a></li>
+            <li><a href="<%=basePath%>system/goods/MagesGoods">商品管理</a></li>
             <li><a href="order/mages.jsp">购物车管理</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
 
             <li class="active"><a>当前用户[${sessionScope.admin.name}]</a></li>
 
-            <li><button type="button" class="btn" style="margin-top: 10px;color: black;"><a href="<%=basePath%>system/logout">退出</a></button></li>
+            <li><button type="submit" class="btn" style="margin-top: 10px;color: black;"><a href="<%=basePath%>system/logout">退出</a></button></li>
         </ul>
     </div>
 </div>
@@ -178,28 +178,25 @@
         });
     });
 
+    $(".h a").click(function () {
+        var url=$(this).attr("href");
+        $('#sub-page').load(url);
+        return false;
+    });
     $(".nav-list a").click(function () {
         var url=$(this).attr("href");
         $('#sub-page').load(url);
         return false;
     });
 
+
+    $(".pagination li a").click(function () {
+        var url=$(this).attr("href");
+        $('#sub-page').load(url);
+        return false;
+    });
     $(function() {
         $('#sub-page').load("system/admin/list");
-        /*var href = "";
-        if(href != '' && href != "#") {
-            $('#sub-page').load(href);
-        }
-        $('.navbar-nav  a').click(function() {
-            var href = $(this).attr('href');
-            $('#sub-page').load(href);
-            return false;
-        });
-        $('.nav-list  a').click(function() {
-            var href = $(this).attr('href');
-            $('#sub-page').load(href);
-            return false;
-        });*/
         $('#user').click(function () {
             $('#username').toggle();
         });

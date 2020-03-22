@@ -9,7 +9,7 @@
         </association>
     </resultMap>
     <select id="readGoods" resultMap="goods">
-        select * from goods
+        select * from goods order by id ASC  limit #{pageIndex},#{pageSize}
     </select>
     <!--添加操作-->
     <insert id="addGoods">
@@ -23,7 +23,7 @@
     </delete>
 
     <!--根据id查找相关信息-->
-    <select id="get"  resultType="Goods">
+    <select id="get"  resultMap="goods">
         select * from goods where id=#{id}
     </select>
     <!--重名查询-->
@@ -36,12 +36,12 @@
         update goods
         <!-- 使用set标签可以将动态的配置SET 关键字，和剔除追加到条件末尾的任何不相关的逗号。 -->
         <set>
-           <if test="goodsImage!=null and goodsImage.length()>0">goodsImage=#{goodsImage},</if>
-            <if test="goodsName!=null and goodsName.length()>0">goodsName=#{goodsName},</if>
-            <if test="goodsPrice!=null and goodsPrice.length()>0">goodsPrice=#{goodsPrice},</if>
-            <if test="goodsDescripttion!=null and goodsDescripttion.length()>0">goodsDescripttion=#{goodsDescripttion},</if>
-            <if test="rebate!=null and rebate.length()>0">rebate=#{rebate},</if>
-            <if test="goodstype!=null and goodstype.id!=null">goodstype=#{goodstype.id},</if>
+           <if test="goodsImage!=null ">goodsImage=#{goodsImage},</if>
+            <if test="goodsName!=null ">goodsName=#{goodsName},</if>
+            <if test="goodsPrice!=null ">goodsPrice=#{goodsPrice},</if>
+            <if test="goodsDescripttion!=null ">goodsDescripttion=#{goodsDescripttion},</if>
+            <if test="rebate!=null ">rebate=#{rebate},</if>
+            <if test="goodstype!=null">goodstypeId=#{goodstype.id},</if>
         </set>
         where id=#{id}
     </update>

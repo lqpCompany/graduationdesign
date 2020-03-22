@@ -10,6 +10,7 @@
 		<typeAlias alias="Admin" type="com.liuer.graduationdesign.model.Admin"/>
 		<typeAlias alias="GoodsType" type="com.liuer.graduationdesign.model.GoodsType"/>
 		<typeAlias alias="Goods" type="com.liuer.graduationdesign.model.Goods"/>
+		<typeAlias alias="Page" type="com.liuer.graduationdesign.model.Page"/>
 	</typeAliases>
 
 	<mappers>
@@ -18,10 +19,11 @@
 		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/customerMapper.xml"/>
 		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/goodstypeMapper.xml"/>
 		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/goodsMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/system/mapper/pageMapper.xml"/>
 		<!--前台映射文件-->
 		<mapper resource="com/liuer/graduationdesign/dao/backstage/mapper/customerMapper.xml"/>
 		<mapper resource="com/liuer/graduationdesign/dao/backstage/mapper/goodsMapper.xml"/>
-		<mapper resource="com/liuer/graduationdesign/dao//backstage/mapper/goodsTypeMapper.xml"/>
+		<mapper resource="com/liuer/graduationdesign/dao/backstage/mapper/goodsTypeMapper.xml"/>
 	</mappers>
 
 </configuration>  

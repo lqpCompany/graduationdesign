@@ -3,6 +3,7 @@ package com.liuer.graduationdesign.service.system;
 import com.liuer.graduationdesign.dao.system.GoodsDao;
 import com.liuer.graduationdesign.model.Goods;
 import com.liuer.graduationdesign.model.GoodsType;
+import com.liuer.graduationdesign.model.Page;
 import com.liuer.graduationdesign.model.exception.MyFormException;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +34,8 @@ public class GoodsService {
         }
     }
 
-    public List<Goods> getAll(){
-        return goodsDao.readGoods();
+    public List<Goods> getAll(Page page){
+        return goodsDao.readGoods(page);
     }
     /**
      * 删除产品信息

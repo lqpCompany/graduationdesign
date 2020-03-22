@@ -22,8 +22,10 @@ public class CustomerServicer {
      */
     public void addCustomer(Customer customer) throws MyFormException {
         if(customer!=null){
-            if(customer.getUsername().equals("")){
+            if(customer.getUsername().equals("")) {
                 throw new MyFormException("添加失败：账户名不能为空");
+            }else if(customer.getPassword().equals("")){
+                throw new MyFormException("添加失败：密码不能为空");
             }
             if(customerDaoi.countCustomerByUsername(customer.getUsername())==0){
                 customerDaoi.add(customer);

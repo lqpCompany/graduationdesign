@@ -2,6 +2,7 @@ package com.liuer.graduationdesign.dao.system;
 
 import com.liuer.graduationdesign.model.Goods;
 import com.liuer.graduationdesign.model.GoodsType;
+import com.liuer.graduationdesign.model.Page;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public interface GoodsDao {
      */
     int countGoodsByUsername(String goodsName);
 
-   List<Goods> readGoods();
+   List<Goods> readGoods(Page page);
     /**
      * 根据类型的标志符删除对应产品
      * @param id 账户信息的id

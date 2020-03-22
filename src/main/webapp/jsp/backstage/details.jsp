@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <title>商品详情页</title>
     <link rel="stylesheet" href="<%=basePath%>jsp/resources/css/details.css" />
-    <script src="<%=basePath%>jsp/resources/JS/jquery-1.11.3.min.js"></script>
+    <script src="<%=basePath%>jsp/resources/jquery.js"></script>
     <script>
         function del() { var num = parseInt($('#quantity').text()) - 1; if(num < 1) { $('#quantity').text(1); } else { $('#quantity').text(num); } }
 
@@ -35,7 +35,7 @@
 <div class="det">
     <div class="det_life">
         <div class="dtu">
-            <img src="<%=basePath%>${goods.goodsImage}" />
+            <img src="${goods.goodsImage}" />
         </div>
     </div>
     <div class="det_right">

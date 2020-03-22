@@ -7,6 +7,13 @@ public class GoodsType {
     private Integer id;
     private String name;
     private String info;
+//
+    public GoodsType(){
+
+    }
+    public GoodsType(Integer id){
+        this.id=id;
+    }
 
     public Integer getId() {
         return id;

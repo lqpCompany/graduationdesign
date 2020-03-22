@@ -10,7 +10,6 @@
 a{
 	cursor: pointer;
 }
-
             #main-nav.nav-tabs.nav-stacked>li>a {
             	padding: 10px 8px;
             	font-size: 14px;
@@ -80,7 +79,7 @@ a{
 
         .navbar-static-top {
             background-color: #212121;
-            margin-bottom: 5px;
+            margin-bottom: 1px;
         }
 
         .navbar-brand {

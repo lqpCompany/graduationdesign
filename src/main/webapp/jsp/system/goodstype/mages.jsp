@@ -23,7 +23,7 @@
             });
 
             $('.update').click(function() {
-                $.get('http://localhost:8080/graduationdesign/system/goodstype/edit/'+$(this).attr('value'),function(data){
+                $.get('http://120.78.138.95:8080/graduationdesign/system/goodstype/edit/'+$(this).attr('value'),function(data){
                     $('#name').val(data.name);
                     $('#info').val(data.info);
                     $('#id').val(data.id);

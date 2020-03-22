@@ -43,10 +43,9 @@ public class AdminMessageController {
         return "system/index.jsp";
     }
     /**
-     * 跳转到全部管理员页面
+     * 把所有的管理员查询出来
      */
     @RequestMapping(value = "/list")
-
     public String list(HttpSession session){
         session.setAttribute("list",adminService.getAdmins());
         return "system/admin/mages.jsp";
