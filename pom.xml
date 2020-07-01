@@ -28,7 +28,7 @@
     <!--mysal驱动包-->
     <mysql.version>5.1.2</mysql.version>
     <!--log4j日志包-->
-    <log4j.version>2.8.2</log4j.version>
+    <log4j.version>2.13.3</log4j.version>
     <!--junit测试包-->
     <junit.version>4.12</junit.version>
     <!--jsp、servlet,jstl需要导入的三个包-->
